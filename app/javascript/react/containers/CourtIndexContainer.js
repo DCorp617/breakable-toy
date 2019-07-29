@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import CourtTile from '../components/CourtTile'
 
 class CourtIndexContainer extends Component {
   constructor(props){
@@ -30,7 +31,11 @@ class CourtIndexContainer extends Component {
   render(){
     let courtIndex = this.state.courts.map(court => {
       return(
-        court.name
+        <CourtTile
+          key={court.id}
+          id={court.id}
+          name={court.name}
+        />
       )
     })
     return(
