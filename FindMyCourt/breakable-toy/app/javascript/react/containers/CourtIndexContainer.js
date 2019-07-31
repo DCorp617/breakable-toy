@@ -40,9 +40,7 @@ class CourtIndexContainer extends Component {
     return(
       <div>
         <h1>Courts Near You</h1>
-        <h4>
-        {courtIndex}
-        </h4>
+        <h4>{courtIndex}</h4>
       </div>
     )
   }

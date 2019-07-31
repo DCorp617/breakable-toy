@@ -41,10 +41,9 @@ class CourtShowContainer extends Component {
             name={this.state.court.name}
           />
         </div>
-        <div>
-          <GoogleMapsContainer
 
-          />
+        <div>
+          <GoogleMapsContainer />
         </div>
       </div>
     )
