@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CourtShow from '../components/CourtShow'
+import GoogleMapsContainer from './GoogleMapsContainer'
 
 class CourtShowContainer extends Component {
   constructor(props) {
@@ -24,7 +25,6 @@ class CourtShowContainer extends Component {
       })
       .then(response => response.json())
       .then(court => {
-        debugger
         this.setState({ court: court })
       })
       .catch(error => console.error(`Error in fetch ${error.message}`));
@@ -33,11 +33,20 @@ class CourtShowContainer extends Component {
   render(){
 
     return(
-      <CourtShow
-        key={this.state.court.id}
-        id={this.state.court.id}
-        name={this.state.court.name}
-      />
+      <div>
+        <div>
+          <CourtShow
+            key={this.state.court.id}
+            id={this.state.court.id}
+            name={this.state.court.name}
+          />
+        </div>
+        <div>
+          <GoogleMapsContainer
+
+          />
+        </div>
+      </div>
     )
   }
 }
