@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 
 const CourtTile = props => {
   return(
-    <li>
+    <ul className="court">
       <a href={`/courts/${props.id}`}>{props.name}</a>
-    </li>
+    </ul>
   )
 }
 

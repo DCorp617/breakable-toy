@@ -1,6 +1,8 @@
 import React from 'react';
 import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
 
+import CurrentLocation from '../components/Map';
+
 class GoogleMapsContainer extends React.Component {
   constructor(props){
     super(props)
@@ -31,30 +33,30 @@ class GoogleMapsContainer extends React.Component {
   }
 
   render(){
-    const style = {
-      width: '50vw',
-      height: '75vh',
-      'marginLeft': 'auto',
-      'marginRight': 'auto'
-    }
 
     return(
-      <Map
-        item
-        xs={12}
-        style={style}
-        google={this.props.google}
-        onClick={this.onMapClick}
-        zoom={14}
-        initialCenter={{ lat: 42.288684, lng: -71.134601 }}
-      >
-        <Marker
-          onClick={this.onMarkerClick}
-          title={'This is hoop'}
-          position={{ lat: 42.288684, lng: -71.134601 }}
-          name={'This is hoop'}
-        />
-      </Map>
+      <div className="map">
+        <CurrentLocation
+          centerAroundCurrentLocation
+          google={this.props.google}
+        >
+          <Marker
+            onClick={this.onMarkerClick}
+            title={'This is hoop'}
+            position={{ lat: 42.288684, lng: -71.134601 }}
+            name={'This is hoop'}
+          />
+          <InfoWindow
+            marker={this.state.activeMarker}
+            visible={this.state.showingInfoWindow}
+            onClose={this.onClose}
+          >
+            <div>
+              <h4>{this.state.selectedPlace.name}</h4>
+            </div>
+          </InfoWindow>
+        </CurrentLocation>
+      </div>
     );
   }
 }
