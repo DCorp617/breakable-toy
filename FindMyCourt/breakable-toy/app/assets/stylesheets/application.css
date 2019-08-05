@@ -18,12 +18,14 @@
 
  h1 {
    color: #11202B;
+   font-family: 'Mukta', sans-serif;
    margin-left: 1rem;
    padding: 5px;
  }
- 
+
  h2 {
    color: #11202B;
+   font-family: 'Mukta', sans-serif;
    margin-left: 1rem;
    padding: 5px;
  }
@@ -32,17 +34,68 @@
    background-color: #E5E7E9;
  }
 
- .top-bar {
-   background-color: #1D428A;
+ul.title-area {
+  text-align: center;
+  display: inline-block;
+}
+
+ .actions {
+   color: #11202B;
+   margin-left: 10rem;
+   margin-right: 10rem;
+   padding: 20px;
  }
 
-.court {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-gap: 10px;
+ .callout.courtTile {
+   padding: 10px;
+ }
+ .callout.courtTile:hover {
+   background-color: yellow;
+   font-size: 150%;
+ }
+
+ .field {
+   color: #11202B;
+   margin-left: 10rem;
+   margin-right: 10rem;
+   padding: 20px;
+ }
+
+ .hollow.button {
+   margin-left: 2rem;
+ }
+
+ .image {
+   width: 300px;
+   height: 300px;;
+ }
+
+ .new-court {
+   color: #11202B;
+   margin-left: 1rem;
+   padding: 5px;
+ }
+
+.review {
+  margin-top: 40rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
+  padding: 20px;
 }
 
 .map {
   margin-left: auto;
   margin-right: auto;
+}
+
+.top-bar {
+  background-color: #1D428A;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 5px;
+  width: 920px;
+  margin: 0 auto;
 }
