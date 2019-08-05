@@ -1,0 +1,22 @@
+<div class="center">
+  <div class="courtShow">
+
+    <hr class="indexBar" />
+    <ul class="wrapper"
+
+      <% @courts.each do |court| %>
+        <a href="/courts/<%= court.id %>">
+          <div class="callout courtTile">
+            <div class="callout-header">
+              <%= court.name %>
+            </div>
+            <div class="image">
+              <%= image_tag court.court_photo.url.to_s %>
+            </div>
+          </div>
+        </a>
+      <% end %>
+    </ul>
+    <h3 class="hollow button"> <%= link_to "Add a Court", new_court_path %> </h3>
+  </div>
+</div>

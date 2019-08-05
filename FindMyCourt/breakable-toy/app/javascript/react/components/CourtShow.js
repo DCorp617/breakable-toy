@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 
 const CourtShow = (props) => {
   return(
-    <div>
+    <div className="court-name">
       <h2>{props.name}</h2>
+      <a href={`/courts/${props.id}/edit`}>Edit</a> &nbsp; / &nbsp;
     </div>
   )
 }
