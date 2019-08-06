@@ -28,10 +28,13 @@
    font-family: 'Mukta', sans-serif;
    margin-left: 1rem;
    padding: 5px;
+   margin-right: 300px;
  }
 
  body {
    background-color: #E5E7E9;
+   margin-left: 6rem;
+   margin-right: 6rem;
  }
 
 ul.title-area {
@@ -39,48 +42,76 @@ ul.title-area {
   display: inline-block;
 }
 
- .actions {
-   color: #11202B;
-   margin-left: 10rem;
-   margin-right: 10rem;
-   padding: 20px;
- }
+.actions {
+ color: #11202B;
+ margin-left: 10rem;
+ margin-right: 10rem;
+ padding: 20px;
+}
 
- .callout.courtTile {
-   padding: 10px;
- }
- .callout.courtTile:hover {
-   background-color: yellow;
-   font-size: 150%;
- }
+.callout.courtTile {
+ padding: 10px;
+ margin: 5px;
+ border: 5px solid #1C428A;
+ border-radius: 15px;
+ transition: 1s ease;
+}
+.callout.courtTile:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: 1s ease;
+}
 
- .field {
-   color: #11202B;
-   margin-left: 10rem;
-   margin-right: 10rem;
-   padding: 20px;
- }
+.court-name {
+  margin-top: 3rem;
+}
 
- .hollow.button {
-   margin-left: 2rem;
- }
+.court-map {
+  margin-top: 100px;
+  margin-left: 445px;
+}
 
- .image {
-   width: 300px;
-   height: 300px;;
- }
+.edit {
+  margin-left: 2rem;
+}
 
- .new-court {
-   color: #11202B;
-   margin-left: 1rem;
-   padding: 5px;
- }
+.field {
+ color: #11202B;
+ margin-left: 15rem;
+ margin-right: 15rem;
+ padding: 20px;
+}
+
+.hollow.button {
+ margin-left: 2rem;
+}
+
+.image {
+ width: 300px;
+ height: 300px;;
+}
+
+.logo {
+ width: 100px;
+ height: auto;
+}
+
+.new-court {
+ color: #11202B;
+ margin-left: 1rem;
+ padding: 5px;
+}
 
 .review {
-  margin-top: 40rem;
+  margin-top: 36rem;
   margin-left: 10rem;
   margin-right: 10rem;
   padding: 20px;
+}
+
+.right:hover {
+  background-color: #000000
 }
 
 .map {
@@ -89,7 +120,7 @@ ul.title-area {
 }
 
 .top-bar {
-  background-color: #1D428A;
+  background-color: #2043A3;
 }
 
 .wrapper {

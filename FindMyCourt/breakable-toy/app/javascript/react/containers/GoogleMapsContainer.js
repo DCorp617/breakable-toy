@@ -36,7 +36,10 @@ class GoogleMapsContainer extends React.Component {
        height: '50vh',
        'marginLeft': 'auto',
        'marginRight': 'auto'
-     }
+    }
+    let latitude = this.props.courtCoordinates.latitude
+    let longitude = this.props.courtCoordinates.longitude
+
     return(
       <div className="map">
         <Map
@@ -46,12 +49,12 @@ class GoogleMapsContainer extends React.Component {
           google={this.props.google}
           onClick={this.onMapClick}
           zoom={14}
-          initialCenter={{ lat: 42.288684, lng: -71.134601 }}
+          initialCenter={{ lat: latitude, lng: longitude }}
         >
           <Marker
             onClick={this.onMarkerClick}
             title={'This is hoop'}
-            position={{ lat: 42.288684, lng: -71.134601 }}
+            position={{ lat: latitude, lng: longitude }}
             name={'This is hoop'}
           />
           <InfoWindow

@@ -5,7 +5,7 @@ const CourtShow = (props) => {
   return(
     <div className="court-name">
       <h2>{props.name}</h2>
-      <a href={`/courts/${props.id}/edit`}>Edit</a> &nbsp; / &nbsp;
+      <a className="edit" href={`/courts/${props.id}/edit`}>Edit</a> &nbsp;
     </div>
   )
 }
