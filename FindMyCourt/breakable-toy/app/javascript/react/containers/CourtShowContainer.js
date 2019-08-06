@@ -27,7 +27,9 @@ class CourtShowContainer extends Component {
       })
       .then(response => response.json())
       .then(court => {
-        this.setState({ court: court })
+        this.setState({
+          court: court
+        })
       })
       .catch(error => console.error(`Error in fetch ${error.message}`));
   }
@@ -61,7 +63,6 @@ class CourtShowContainer extends Component {
   }
 
   render(){
-
     return(
       <div>
         <div>
@@ -72,10 +73,10 @@ class CourtShowContainer extends Component {
           />
         </div>
 
-        <div>
-          <GoogleMapsContainer />
+        <div className="court-map">
+          <GoogleMapsContainer courtCoordinates={this.state.court} />
         </div>
-        <ReviewFormContainer addNewReview={this.addNewReview}/>
+        <ReviewFormContainer addNewReview={this.addNewReview} />
       </div>
     )
   }

@@ -13,22 +13,22 @@
 <body>
 
   <nav class="top-bar">
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="/">🏀</a></h1>
-      </li>
-    </ul>
-
     <section class="top-bar-section">
       <ul class="right">
         <%- if current_user -%>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+        <li className="authentication"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
+        <li className="authentication"><%= link_to 'Sign Up', new_user_registration_path %></li>
+        <li className="authentication"><%= link_to 'Sign In', new_user_session_path %></li>
         <%- end -%>
       </ul>
     </section>
+    <div class="top-bar-left">
+     <div class="logo">
+       <%= link_to image_tag("/logo/ball-logo.png"), "/" %>
+     </div>
+   </div>
+
   </nav>
 
   <%- flash.each do |key, value| -%>
