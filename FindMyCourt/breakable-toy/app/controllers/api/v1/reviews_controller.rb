@@ -3,32 +3,25 @@ require "devise"
 class Api::V1::ReviewsController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-    render json: Review.where(params[:court_id])
-  end
-
   def new
-    @court = Court.find(params[:court_id])
-    @review = Review.new
   end
 
   def create
-    @court = Court.find(params[:court_id])
     @review = Review.new(review_params)
+    @court = Court.find(params[:court_id])
     @review.court = @court
-
     if @review.save
-      flash[:notice] = "Review saved successfully."
-      redirect_to court_path(@court)
+      flash[:success] = "New review created."
+      render json: { court: @court }
     else
-      flash[:alert] = "Failed to save review."
-      render :new
+      flash[:notice] = "Review could not be saved"
+      render json: { court: @court }
     end
+  end
 
-    review = JSON.parse(request.body.read)
+  private
 
-    Review.create!(user: current_user, description: review["description"])
-
-    render json: Court.find(courtId)
+  def review_params
+    params.require(:review).permit(:description)
   end
 end
