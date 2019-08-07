@@ -7,7 +7,6 @@ class ReviewFormContainer extends Component {
     super(props)
     this.state = {
       reviewDescription: '',
-      reviewRating: 3,
       errors: {}
     }
 
@@ -20,8 +19,7 @@ class ReviewFormContainer extends Component {
   handleClearForm(event){
     event.preventDefault();
     this.setState({
-      reviewDescription: '',
-      reviewRating: []
+      reviewDescription: ''
     })
   }
 
@@ -55,6 +53,7 @@ class ReviewFormContainer extends Component {
     return(
       <form onSubmit={this.handleFormSubmit}>
         <div className="review">
+        <h3>Reviews</h3>
           <TextField
             handlerFunction={this.handleBodyChange}
             content={this.state.reviewDescription}
@@ -63,7 +62,7 @@ class ReviewFormContainer extends Component {
           />
           <div className="button-group">
             <button className="form-button" onClick={this.handleClearForm}>Clear</button>
-            <input className="form-button submit" type="submit" value="Submit" />
+            <input className="form-button" type="submit" value="Submit" />
           </div>
         </div>
       </form>

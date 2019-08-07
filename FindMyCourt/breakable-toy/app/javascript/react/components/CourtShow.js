@@ -6,6 +6,9 @@ const CourtShow = (props) => {
     <div className="court-name">
       <h2>{props.name}</h2>
       <a className="edit" href={`/courts/${props.id}/edit`}>Edit</a> &nbsp;
+      <div>
+
+      </div>
     </div>
   )
 }
