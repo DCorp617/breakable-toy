@@ -1,13 +1,11 @@
 <div class="center">
-  <div class="courtShow">
-
     <hr class="indexBar" />
-    <ul class="wrapper"
+    <ul class="wrapper">
 
       <% @courts.each do |court| %>
         <a href="/courts/<%= court.id %>">
-          <div class="callout courtTile">
-            <div class="callout-header">
+          <div class="card-panel hoverable">
+            <div class="container">
               <%= court.name %>
             </div>
             <div class="image">
@@ -18,5 +16,4 @@
       <% end %>
     </ul>
     <h3 class="button secondary"> <%= link_to "Add a Court", new_court_path %> </h3>
-  </div>
 </div>

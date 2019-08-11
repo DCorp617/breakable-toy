@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_07_183331) do
+ActiveRecord::Schema.define(version: 2019_08_05_175430) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,13 +30,11 @@ ActiveRecord::Schema.define(version: 2019_08_07_183331) do
 
   create_table "reviews", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "review_id", null: false
+    t.bigint "court_id", null: false
     t.text "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "court_id", null: false
     t.index ["court_id"], name: "index_reviews_on_court_id"
-    t.index ["review_id"], name: "index_reviews_on_review_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 

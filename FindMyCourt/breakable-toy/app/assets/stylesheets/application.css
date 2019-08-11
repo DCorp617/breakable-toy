@@ -33,7 +33,8 @@
 
  body {
    background: url("background.jpeg");
-   background-color: #E5E7E9;
+   background-repeat: no-repeat;
+   background-color: #F0F8FF;
    margin-left: 6rem;
    margin-right: 6rem;
  }
@@ -47,31 +48,43 @@ ul.title-area {
  color: #11202B;
  margin-left: 10rem;
  margin-right: 10rem;
- padding: 20px;
+ padding: 30px;
 }
 
-.callout.courtTile {
- padding: 10px;
+.button.secondary {
+  border-radius: 20px;
+}
+
+.card-panel.hoverable {
  margin: 5px;
- border: 5px solid #1C428A;
  border-radius: 15px;
  transition: 1s ease;
 }
-.callout.courtTile:hover {
+.card-panel.hoverable:hover {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
-  transition: 1s ease;
+  transition: .5s ease;
+}
+
+.container {
+  font-weight: bold;
+  font-size: 17px;
+
 }
 
 .court-name {
-  margin-top: 3rem;
-  color: #FFFFFF
+  margin: auto;
+  margin-top: 2rem;
+  display: inline-block;
+  max-width: 40%;
 }
 
-.court-map {
-  margin-top: 100px;
-  margin-left: 445px;
+.court-pic {
+  max-width: 500px;
+  display: inline-block;
+  margin: auto;
+  border: 1rem solid #FFFFFF;
 }
 
 .edit {
@@ -82,7 +95,11 @@ ul.title-area {
  color: #11202B;
  margin-left: 15rem;
  margin-right: 15rem;
- padding: 20px;
+ padding: 10px;
+}
+
+.form-name {
+  margin-top: 4rem;
 }
 
 .hollow.button {
@@ -90,6 +107,7 @@ ul.title-area {
 }
 
 .image {
+  background-repeat: no-repeat;
  width: 300px;
  height: 300px;;
 }
@@ -105,6 +123,15 @@ ul.title-area {
  padding: 5px;
 }
 
+.map {
+  max-height: 10px !important;
+}
+
+.map-photo {
+  display: block;
+  margin: auto;
+}
+
 .review {
   margin-top: 36rem;
   margin-left: 10rem;
@@ -112,13 +139,21 @@ ul.title-area {
   padding: 20px;
 }
 
+.reviews {
+  background-color: #FFFFFF;
+  display: block;
+  margin: auto;
+  max-width: 1500px;
+  text-align: center;
+}
+
 .right:hover {
   background-color: #000000
 }
 
-.map {
-  margin-left: auto;
-  margin-right: auto;
+
+.reviewForm{
+  margin-top:5px
 }
 
 .top-bar {
@@ -127,8 +162,10 @@ ul.title-area {
 
 .wrapper {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto;
   grid-gap: 5px;
   width: 920px;
-  margin: 0 auto;
+  margin-top: 3rem;
+  margin-left: 3rem;
+  margin-right: 30px auto;
 }

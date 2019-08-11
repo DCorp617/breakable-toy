@@ -1,13 +1,19 @@
 import React, { Component } from 'react'
 import CourtShow from '../components/CourtShow'
 import ReviewFormContainer from './ReviewFormContainer'
+import ReviewTile from '../components/ReviewTile'
 import GoogleMapsContainer from './GoogleMapsContainer'
 
 class CourtShowContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      court: {},
+      courtObject: {
+        court: {},
+        court_photo: {
+          url: ""
+        }
+      },
       reviews: []
     }
     this.addNewReview = this.addNewReview.bind(this)
@@ -28,18 +34,16 @@ class CourtShowContainer extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        debugger
         this.setState({
-          court: body.court, reviews:body.reviews
+          courtObject: body, reviews: body.reviews
         })
       })
       .catch(error => console.error(`Error in fetch ${error.message}`));
   }
 
   addNewReview(formPayload) {
-  let courtID = this.props.match.params.id
-  let fetchUrl = `/api/v1/courts/${courtID}/reviews`
-  fetch(`${fetchUrl}`, {
+  let courtID = this.state.courtObject.id
+  fetch(`/api/v1/courts/${this.props.match.params.id}/reviews`, {
     credentials: 'same-origin',
     method: 'POST',
     headers: {
@@ -58,30 +62,51 @@ class CourtShowContainer extends Component {
       }
     })
     .then(response => response.json())
-    .then(courtInfo => {
-      this.setState({ court: courtInfo })
+    .then(body => {
+      debugger
+      let currentReviews = this.state.reviews
+      this.setState({ reviews: currentReviews.concat(body.description) })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
-}
+  }
+
 
   render(){
-    let court_photo;
-    debugger
+    const {court = {}} = this.state;
+    let court_photo = ""
+    if(this.state.courtObject.court.court_photo){
+      court_photo = this.state.courtObject.court.court_photo
+    }
+    let reviews;
+    reviews = this.state.reviews.map(review => {
+      debugger
+      return(
+        <ReviewTile
+        key={review.id}
+        reviews={review}
+        />
+      )
+    })
     return(
       <div>
-        <div>
-          <CourtShow
-            key={this.state.court.id}
-            id={this.state.court.id}
-            name={this.state.court.name}
-            picture={this.state.court.court_photo}
-          />
+        <div className="court-name">
+          <h2>{this.state.courtObject.court.name}</h2>
+          <a className="edit" href={`/courts/${this.state.courtObject.court.id}/edit`}>Edit</a> &nbsp;<br />
         </div>
-
-        <div className="court-map">
-          <GoogleMapsContainer courtCoordinates={this.state.court} />
+        <div className="map-photo">
+          <div className="court-pic">
+            <img src={court_photo.url} />
+          </div>
+          <div>
+            <GoogleMapsContainer courtCoordinates={this.state.courtObject.court} />
+          </div>
         </div>
-        <ReviewFormContainer addNewReview={this.addNewReview} />
+        <div className="reviewForm">
+          <ReviewFormContainer addNewReview={this.addNewReview} />
+        </div>
+        <div className="reviews">
+        {reviews}
+        </div>
       </div>
     )
   }

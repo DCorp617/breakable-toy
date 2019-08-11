@@ -1,16 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const CourtShow = (props) => {
-  return(
-    <div className="court-name">
-      <h2>{props.name}</h2>
-      <a className="edit" href={`/courts/${props.id}/edit`}>Edit</a> &nbsp;
-      <div>
 
+  if(props.court.court == null){
+    return(
+      <div>
+        props not rendered yet
       </div>
-    </div>
-  )
+    )
+  } else {
+      return(
+        <div className="court-name">
+        <h2>{props.court.court.name}</h2>
+          <a className="edit" href={`/courts/${props.court.court.id}/edit`}>Edit</a> &nbsp;<br />
+          <div className="court-image">
+          <img class="card-panel" src={props.court.court.court_photo.url} />
+          </div>
+        </div>
+      )
+  }
 }
 
 export default CourtShow;

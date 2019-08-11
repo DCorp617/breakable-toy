@@ -7,7 +7,7 @@ class Api::V1::CourtsController < ApplicationController
   def show
     court = Court.find(params[:id])
     reviews = court.reviews
-    render json: {court: court, reviews: reviews}
+    render json: { court: court, reviews: reviews }
   end
 
   def new
@@ -16,8 +16,8 @@ class Api::V1::CourtsController < ApplicationController
 
   def create
     court = Court.new(name: params[:court])
-    if court.save
-      render json: { court: court }
+      if court.save
+      render json: court
     else
       render json: { error: fortune.error.full_message }, status: :unprocessable_entity
     end

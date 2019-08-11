@@ -1,29 +1,53 @@
-<h2>Add New Court</h2>
+<h2 class="form-name">Add New Court</h2>
+<%= link_to "Back", courts_path %>
 
-<%= form_for(@court) do |f| %>
-  <div class="field"
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+<div class="card-panel"
+  <div class="center">
+  <%= form_for(@court) do |f| %>
+    <div class="field"
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div class="field"
+      <%= f.label :street %><br />
+      <%= f.text_field :street %>
+    </div>
+    <div class="field"
+      <%= f.label :city %><br />
+      <%= f.text_field :city %>
+    </div>
+    <div class="field"
+      <%= f.label :state %><br />
+      <%= f.text_field :state %>
+    </div>
+    <div class="field"
+      <%= f.label :country %><br />
+      <%= f.text_field :country %>
+    </div>
   </div>
-  <div class="field"
-    <%= f.label :street %><br />
-    <%= f.text_field :street %>
-  </div>
-  <div class="field"
-    <%= f.label :city %><br />
-    <%= f.text_field :city %>
-  </div>
-  <div class="field"
-    <%= f.label :state %><br />
-    <%= f.text_field :state %>
-  </div>
-  <div class="field"
-    <%= f.label :country %><br />
-    <%= f.text_field :country %>
-  </div>
-    <%= f.file_field :court_photo %>
-  <div class="field">
-    <%= f.submit "Add a court" %><br />
-    <%= link_to "Back", courts_path %>
-  </div>
-<% end %>
+  <%= f.file_field :court_photo %>
+    <label>
+      <input type="checkbox" />
+      <span>Double-rim</span>
+    </label>
+    <label>
+      <input type="checkbox" />
+      <span>Glass backboard</span>
+    </label>
+    <label>
+      <input type="checkbox" />
+      <span>Plastic backboard</span>
+    </label>
+    <label>
+      <input type="checkbox" />
+      <span>Outside</span>
+    </label>
+    <label>
+      <input type="checkbox" />
+      <span>Inside</span>
+    </label><br />
+    <div>
+      <%= f.submit "Add a court" %><br />
+    </div>
+  <% end %>
+</div>

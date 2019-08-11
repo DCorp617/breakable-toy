@@ -13,33 +13,35 @@ class ReviewFormContainer extends Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
     this.handleClearForm = this.handleClearForm.bind(this)
     this.handleBodyChange = this.handleBodyChange.bind(this)
-    this.validateBody = this.validateBody.bind(this)
   }
 
   handleClearForm(event){
+    console.log("I'm CLEEE")
     event.preventDefault();
-    this.setState({
-      reviewDescription: ''
-    })
+    this.setState({ reviewDescription: '' })
   }
 
   handleBodyChange(event){
+    this.validateBody(event.target.value)
     this.setState({ reviewDescription: event.target.value })
+    console.log(event)
   }
 
   handleFormSubmit(event){
     event.preventDefault();
     let formPayload = {
-      description: this.state.reviewDescription
+      review: {
+        description: this.state.reviewDescription
+      }
     }
     this.props.addNewReview(formPayload);
     this.handleClearForm(event);
   }
 
-  validateBody(input){
-    if(input.trim() === ''){
+  validateBody(input) {
+    if (input.trim() === '') {
       let newError = { reviewBodyInput: 'You must input a review body.' }
-      this.setState({ errors: Object.assign({}, this.state.error, newError) })
+      this.setState({ errors: Object.assign({}, this.state.errors, newError) })
       return false
     } else {
       let errorState = this.state.errors
