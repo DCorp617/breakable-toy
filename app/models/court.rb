@@ -1,3 +1,0 @@
-class Court < ApplicationRecord
-
-end

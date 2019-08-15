@@ -2,9 +2,9 @@ import React from 'react'
 
 const CourtTile = props => {
   return(
-    <div>
-      {props.name}
-    </div>
+    <ul className="court">
+      <a href={`/courts/${props.id}`}>{props.name}</a>
+    </ul>
   )
 }
 
