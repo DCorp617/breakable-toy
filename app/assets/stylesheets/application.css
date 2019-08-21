@@ -1,0 +1,171 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+ h1 {
+   color: #11202B;
+   font-family: 'Mukta', sans-serif;
+   margin-left: 1rem;
+   padding: 5px;
+ }
+
+ h2 {
+   color: #11202B;
+   font-family: 'Mukta', sans-serif;
+   margin-left: 1rem;
+   padding: 5px;
+   margin-right: 300px;
+ }
+
+ body {
+   background: url("background.jpeg");
+   background-repeat: no-repeat;
+   background-color: #F0F8FF;
+   margin-left: 6rem;
+   margin-right: 6rem;
+ }
+
+ul.title-area {
+  text-align: center;
+  display: inline-block;
+}
+
+.actions {
+ color: #11202B;
+ margin-left: 10rem;
+ margin-right: 10rem;
+ padding: 30px;
+}
+
+.button.secondary {
+  border-radius: 20px;
+}
+
+.card-panel.hoverable {
+ margin: 5px;
+ border-radius: 15px;
+ transition: 1s ease;
+}
+.card-panel.hoverable:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: .5s ease;
+}
+
+.container {
+  font-weight: bold;
+  font-size: 17px;
+
+}
+
+.court-name {
+  margin: auto;
+  margin-top: 2rem;
+  display: inline-block;
+  max-width: 40%;
+}
+
+.court-pic {
+  max-width: 500px;
+  display: inline-block;
+  margin: auto;
+  border: 1rem solid #FFFFFF;
+}
+
+.edit {
+  margin-left: 2rem;
+}
+
+.field {
+ color: #11202B;
+ margin-left: 15rem;
+ margin-right: 15rem;
+ padding: 10px;
+}
+
+.form-name {
+  margin-top: 4rem;
+}
+
+.hollow.button {
+ margin-left: 2rem;
+}
+
+.image {
+  background-repeat: no-repeat;
+ width: 300px;
+ height: 300px;;
+}
+
+.logo {
+ width: 100px;
+ height: auto;
+}
+
+.new-court {
+ color: #11202B;
+ margin-left: 1rem;
+ padding: 5px;
+}
+
+.map {
+  max-height: 10px !important;
+}
+
+.map-photo {
+  display: block;
+  margin: auto;
+}
+
+.review {
+  margin-top: 36rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
+  padding: 20px;
+}
+
+.reviews {
+  background-color: #FFFFFF;
+  display: block;
+  margin: auto;
+  max-width: 1500px;
+  text-align: center;
+}
+
+.right:hover {
+  background-color: #000000
+}
+
+
+.reviewForm{
+  margin-top:5px
+}
+
+.top-bar {
+  background-color: #2043A3;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 5px;
+  width: 920px;
+  margin-top: 3rem;
+  margin-left: 3rem;
+  margin-right: 30px auto;
+}

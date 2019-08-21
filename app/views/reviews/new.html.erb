@@ -1,0 +1,11 @@
+<h3>Leave a Court Review</h3>
+
+<%= form_for(@court, @review) do |f| %>
+  <div class="field"
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Leave review", class:"button"%>
+  </div>
+<% end %>
