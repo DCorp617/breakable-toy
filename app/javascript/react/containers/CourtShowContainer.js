@@ -87,11 +87,23 @@ class CourtShowContainer extends Component {
         />
       )
     })
+
+
     return(
       <div>
-        <div className="court-name">
-          <h2>{this.state.courtObject.court.name}</h2>
-          <a className="edit" href={`/courts/${this.state.courtObject.court.id}/edit`}>Edit</a> &nbsp;<br />
+        <div className="court">
+          <div class="row">
+            <div class="columns small-6">
+              <h5>{this.state.courtObject.court.street}</h5>
+            </div>
+            <div class="columns small-6">
+              <h5>{this.state.courtObject.court.city}, {this.state.courtObject.court.state}</h5>
+            </div>
+          </div>
+          <div className="court-name">
+            <h3>{this.state.courtObject.court.name}</h3>
+            <a className="edit" href={`/courts/${this.state.courtObject.court.id}/edit`}>Edit</a> &nbsp;<br />
+          </div>
         </div>
         <div className="map-photo">
           <div className="court-pic">
