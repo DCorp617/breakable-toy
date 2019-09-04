@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   get '*page', to: 'courts#index', constraints: ->(req) do
     !req.xhr? && req.format.html?
   end
-  root 'courts#index'
+  root 'static_pages#index'
 end

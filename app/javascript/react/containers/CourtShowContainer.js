@@ -90,9 +90,10 @@ class CourtShowContainer extends Component {
 
 
     return(
+      <section className="container">
       <div>
-        <div className="court">
-          <div class="row">
+        <div className="row location__header panel">
+          <div className="row">
             <div class="columns small-6">
               <h5>{this.state.courtObject.court.street}</h5>
             </div>
@@ -120,6 +121,7 @@ class CourtShowContainer extends Component {
         {reviews}
         </div>
       </div>
+    </section>
     )
   }
 }
