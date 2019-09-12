@@ -12,32 +12,27 @@ class HomeIndexContainer extends Component {
 
     return(
       <div>
-        <div className="grid-container">
-          <div class="grid-x grid-margin-x small-up-2 medium-up-3">
-            <div className="cell">
-              <div className="card">
-                <div className="card-section">
-                  <h1> Find Courts </h1>
-                </div>
-              </div>
+        <section className="container-fluid benefits">
+          <div className="row">
+            <div className="column small-4">
+              <h3> Find Courts </h3>
+              <i className="fas fa-binoculars"></i>
             </div>
-            <div className="cell">
-              <div className="card">
-                <div className="card-section">
-                  <h1> Add Courts </h1>
-                </div>
-              </div>
+            <div className="column small-4">
+              <h3> Add Courts </h3>
+              <i className="fas fa-plus-circle"></i>
             </div>
-            <div className="cell">
-              <div className="card">
-                <div className="card-section">
-                  <h1> Interact with other players </h1>
-                </div>
-              </div>
+            <div className="column small-4">
+              <h3> Interact with other players </h3>
+              <i className="fas fa-plus-circle"></i>
             </div>
           </div>
+        </section>
+        <div className="row align-center">
+          <div className="column center">
+            <a href="index.html" className="button primary">Find Courts Near You</a>
+          </div>
         </div>
-        <a href="index.html" className="button primary">Find Courts Near You</a>
       </div>
     )
   }
