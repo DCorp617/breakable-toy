@@ -16,7 +16,6 @@ class ReviewFormContainer extends Component {
   }
 
   handleClearForm(event){
-    console.log("I'm CLEEE")
     event.preventDefault();
     this.setState({ reviewDescription: '' })
   }

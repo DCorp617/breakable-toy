@@ -32,9 +32,11 @@
  }
 
  body {
-   background: url("background.jpeg");
+   background: url("izuddin-helmi-adnan-UQpTP-KqYRk-unsplash.jpeg");
    background-repeat: no-repeat;
-   background-color: #F0F8FF;
+   background-position: center;
+   background-size: 2000px 1000px;
+   background-color: #FCB600;
    margin-left: 6rem;
    margin-right: 6rem;
  }
@@ -70,14 +72,14 @@ ul.title-area {
 .container {
   font-weight: bold;
   font-size: 17px;
+}
 
+.court {
+  text-align: center;
 }
 
 .court-name {
-  margin: auto;
-  margin-top: 2rem;
-  display: inline-block;
-  max-width: 40%;
+  color: #FCB600;
 }
 
 .court-pic {
@@ -157,7 +159,7 @@ ul.title-area {
 }
 
 .top-bar {
-  background-color: #2043A3;
+  background-color: #FCB600;
 }
 
 .wrapper {

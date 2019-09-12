@@ -1,5 +1,8 @@
 class CourtsController < ApplicationController
 
+  def home
+  end
+
   def index
     @courts = Court.all.order("created_at DESC")
   end
