@@ -1,6 +1,10 @@
 <div class="center">
     <hr class="indexBar" />
     <ul class="wrapper">
+      <%= form_tag(courts_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder:  "Search Courts" %>
+        <%= submit_tag "Search", :name => nil %>
+      <% end %>
 
       <% @courts.each do |court| %>
         <a href="/courts/<%= court.id %>">
@@ -17,6 +21,9 @@
     </ul>
     <h3 class="button secondary"> <%= link_to "Add a Court", new_court_path %> </h3>
 
+    <% if @courts.blank? %>
+      <h4>There are no courts with the name <%= params[:search] %>.</h4>
+    <% end %>
 </div>
 
 
