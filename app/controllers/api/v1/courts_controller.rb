@@ -23,8 +23,12 @@ class Api::V1::CourtsController < ApplicationController
     end
   end
 
-  def search
-    @courts = Court.where("name ILIKE ?", "%#{params['search_string']}%")
-    render json: @courts
-  end
 end
+
+
+
+
+# def search
+#   @courts = Court.where("name ILIKE ?", "%#{params['search_string']}%")
+#   render json: @courts
+# end

@@ -36,13 +36,6 @@ class HomeIndexContainer extends Component {
 
     return(
       <div>
-        <section className="container-fluid benefits">
-          <div className="row">
-            <SearchBar
-              handleFetch={this.fetchResults}
-            />
-          </div>
-        </section>
         <div className="home">
           <section className="container-fluid benefits">
             <div className="row">

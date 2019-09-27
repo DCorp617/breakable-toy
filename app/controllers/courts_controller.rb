@@ -4,7 +4,12 @@ class CourtsController < ApplicationController
   end
 
   def index
-    @courts = Court.all.order("created_at DESC")
+    @courts = Court.all
+    if params[:search]
+      @courts = Court.search(params[:search]).order("created_at DESC")
+    else
+      @courts = Court.all.order("created_at DESC")
+    end
   end
 
   def show
