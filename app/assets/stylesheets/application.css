@@ -108,6 +108,14 @@ ul.title-area {
  margin-left: 2rem;
 }
 
+.home {
+  margin-top: 10rem;
+  margin-left: 20rem;
+  border-radius: 10px;
+  background-color: #C1820F;
+  max-width: 1000px;
+}
+
 .image {
   background-repeat: no-repeat;
  width: 300px;
