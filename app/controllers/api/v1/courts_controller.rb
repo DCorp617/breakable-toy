@@ -22,4 +22,9 @@ class Api::V1::CourtsController < ApplicationController
       render json: { error: fortune.error.full_message }, status: :unprocessable_entity
     end
   end
+
+  def search
+    @courts = Court.where("name ILIKE ?", "%#{params['search_string']}%")
+    render json: @courts
+  end
 end

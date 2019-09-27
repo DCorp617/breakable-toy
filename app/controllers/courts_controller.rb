@@ -50,6 +50,10 @@ class CourtsController < ApplicationController
     redirect_to courts_path
   end
 
+  def show
+    @court = Court.find(params[:id])
+  end
+
   private
 
   def court_params
