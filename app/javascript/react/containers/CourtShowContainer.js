@@ -91,37 +91,37 @@ class CourtShowContainer extends Component {
 
     return(
       <section className="container">
-      <div>
-        <div className="row location__header panel">
-          <div className="row">
-            <div class="columns small-6">
-              <h5>{this.state.courtObject.court.street}</h5>
+        <div>
+          <div className="row location__header panel">
+            <div className="row">
+              <div class="columns small-6">
+                <h5>{this.state.courtObject.court.street}</h5>
+              </div>
+              <div class="columns small-6">
+                <h5>{this.state.courtObject.court.city}, {this.state.courtObject.court.state}</h5>
+              </div>
             </div>
-            <div class="columns small-6">
-              <h5>{this.state.courtObject.court.city}, {this.state.courtObject.court.state}</h5>
+            <div className="court-name">
+              <h3>{this.state.courtObject.court.name}</h3>
+              <a className="edit" href={`/courts/${this.state.courtObject.court.id}/edit`}>Edit</a> &nbsp;<br />
             </div>
           </div>
-          <div className="court-name">
-            <h3>{this.state.courtObject.court.name}</h3>
-            <a className="edit" href={`/courts/${this.state.courtObject.court.id}/edit`}>Edit</a> &nbsp;<br />
+          <div className="map-photo">
+            <div className="court-pic">
+              <img src={court_photo.url} />
+            </div>
+            <div>
+              <GoogleMapsContainer courtCoordinates={this.state.courtObject.court} />
+            </div>
+          </div>
+          <div className="reviewForm">
+            <ReviewFormContainer addNewReview={this.addNewReview} />
+          </div>
+          <div className="reviews">
+          {reviews}
           </div>
         </div>
-        <div className="map-photo">
-          <div className="court-pic">
-            <img src={court_photo.url} />
-          </div>
-          <div>
-            <GoogleMapsContainer courtCoordinates={this.state.courtObject.court} />
-          </div>
-        </div>
-        <div className="reviewForm">
-          <ReviewFormContainer addNewReview={this.addNewReview} />
-        </div>
-        <div className="reviews">
-        {reviews}
-        </div>
-      </div>
-    </section>
+      </section>
     )
   }
 }
