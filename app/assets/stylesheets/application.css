@@ -170,6 +170,11 @@ ul.title-area {
   background-color: #FCB600;
 }
 
+@viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: auto auto auto auto;
