@@ -15,7 +15,10 @@
     "react-icons": "^3.7.0",
     "react-router-dom": "^5.0.1",
     "react-spring": "^8.0.27",
-    "redbox-react": "1.6.0"
+    "redbox-react": "1.6.0",
+    "aws-sdk": "2.x",
+    "ejs": "2.x",
+    "express": "4.x"
   },
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.23.0",
