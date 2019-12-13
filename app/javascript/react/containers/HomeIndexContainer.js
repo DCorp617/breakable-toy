@@ -7,33 +7,9 @@ class HomeIndexContainer extends Component {
     this.state = {
       courts: []
     }
-    this.fetchResults = this.fetchResults.bind(this)
-  }
-
-  fetchResults(payload){
-    const body = JSON.stringify({
-      search_string: payload
-    })
-    fetch('/api/v1/courts/search.json', {
-      method: 'POST',
-      body: body,
-      credentials: 'same-origin',
-      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
-    })
-    .then(response => response.json())
-    .then(results => {
-      this.setState({ courts: results })
-    })
   }
 
   render(){
-    let a = []
-    let ballCourts = this.state.courts;
-    ballCourts.forEach(function(element){
-      a.push(element);
-      console.log(a)
-    })
-
     return(
       <div>
         <div className="home">
@@ -59,7 +35,6 @@ class HomeIndexContainer extends Component {
             </div>
           </div>
         </div>
-        {a}
       </div>
     )
   }

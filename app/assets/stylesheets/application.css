@@ -53,14 +53,32 @@ ul.title-area {
  padding: 30px;
 }
 
+.input {
+  position:relative;
+  padding:6px 15px;
+  left:-8px;
+  border:2px solid #207cca;
+  background-color:#207cca;
+  color:#fafafa;
+}
+.input:hover  {
+  background-color:#fafafa;
+  color:#207cca;
+}
+
 .button.secondary {
   border-radius: 20px;
 }
 
 .card-panel.hoverable {
+ height: 198.89px;
  margin: 5px;
  border-radius: 15px;
  transition: 1s ease;
+
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
 .card-panel.hoverable:hover {
   -webkit-transform: scale(1.1);
@@ -70,8 +88,10 @@ ul.title-area {
 }
 
 .container {
+  display:block;
   font-weight: bold;
   font-size: 17px;
+  padding-right: 15px;
 }
 
 .court {
@@ -109,6 +129,7 @@ ul.title-area {
 }
 
 .home {
+  display: inline-grid;
   margin-top: 10rem;
   margin-left: 10rem;
   border-radius: 10px;
@@ -118,13 +139,13 @@ ul.title-area {
 
 .image {
   background-repeat: no-repeat;
- width: 300px;
- height: 300px;;
+ width: 100%;
+ max-height: 300px;;
 }
 
 .logo {
  width: 100px;
- height: auto;
+ height: 80%;
 }
 
 .new-court {
@@ -133,8 +154,10 @@ ul.title-area {
  padding: 5px;
 }
 
-.map {
+#map_canvas {
   max-height: 10px !important;
+  max-width: 10px;
+  position: relative;
 }
 
 .map-photo {
@@ -162,8 +185,26 @@ ul.title-area {
 }
 
 
-.reviewForm{
+.reviewForm {
   margin-top:5px
+}
+
+.row-top {
+  padding: 8px 15px;
+  background: rgba(50, 50, 50, 0.5);
+  border: 0px solid  #6d6d6d;
+  align-items: center;
+}
+
+.search {
+  max-width: 50%;
+  margin: auto;
+  margin-top: 2rem;
+  text-align: center;
+
+  padding:8px 15px;
+  background:rgba(50, 50, 50, 0.5);
+  border:0px solid #dbdbdb;
 }
 
 .top-bar {
@@ -171,11 +212,22 @@ ul.title-area {
 }
 
 .wrapper {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
+  display: inline-grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 400px 400px 400px;
   grid-gap: 5px;
   width: 920px;
+  justify-content: center;
   margin-top: 3rem;
-  margin-left: 3rem;
-  margin-right: 30px auto;
+}
+
+/* Searchbar Placeholder text-align */
+input{
+  text-align: center;
+  color: #dd3333;
+}
+::-webkit-input-placeholder { /* For WebKit browsers */
+    color:    #FBB600;
+                font-family:Helvetica Neue;
+                font-weight:bold;
 }
