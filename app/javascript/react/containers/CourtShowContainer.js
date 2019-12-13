@@ -90,6 +90,7 @@ class CourtShowContainer extends Component {
 
     return(
       <section className="container">
+<<<<<<< HEAD
       <div>
         <div className="row-top">
           <div className="court-name">
@@ -98,10 +99,23 @@ class CourtShowContainer extends Component {
           <div className="row">
             <div class="columns small-6">
               <h5>{this.state.courtObject.court.street}</h5>
+=======
+        <div>
+          <div className="row location__header panel">
+            <div className="row">
+              <div class="columns small-6">
+                <h5>{this.state.courtObject.court.street}</h5>
+              </div>
+              <div class="columns small-6">
+                <h5>{this.state.courtObject.court.city}, {this.state.courtObject.court.state}</h5>
+              </div>
+>>>>>>> 440d0af1fb1fabbb2f4fa4689e8efda839982053
             </div>
-            <div class="columns small-6">
-              <h5>{this.state.courtObject.court.city}, {this.state.courtObject.court.state}</h5>
+            <div className="court-name">
+              <h3>{this.state.courtObject.court.name}</h3>
+              <a className="edit" href={`/courts/${this.state.courtObject.court.id}/edit`}>Edit</a> &nbsp;<br />
             </div>
+<<<<<<< HEAD
             <a class="edit" href={`/courts/${this.state.courtObject.court.id}/edit`}>Edit</a> &nbsp;<br />
           </div>
         </div>
@@ -119,6 +133,25 @@ class CourtShowContainer extends Component {
         </div>
       </div>
     </section>
+=======
+          </div>
+          <div className="map-photo">
+            <div className="court-pic">
+              <img src={court_photo.url} />
+            </div>
+            <div>
+              <GoogleMapsContainer courtCoordinates={this.state.courtObject.court} />
+            </div>
+          </div>
+          <div className="reviewForm">
+            <ReviewFormContainer addNewReview={this.addNewReview} />
+          </div>
+          <div className="reviews">
+          {reviews}
+          </div>
+        </div>
+      </section>
+>>>>>>> 440d0af1fb1fabbb2f4fa4689e8efda839982053
     )
   }
 }

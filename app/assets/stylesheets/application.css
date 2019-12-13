@@ -189,6 +189,7 @@ ul.title-area {
   margin-top:5px
 }
 
+<<<<<<< HEAD
 .row-top {
   padding: 8px 15px;
   background: rgba(50, 50, 50, 0.5);
@@ -207,8 +208,43 @@ ul.title-area {
   border:0px solid #dbdbdb;
 }
 
+=======
+.search.form {
+  background-color: #FFFFFF;
+}
+
+.search {
+  width:400px;
+  margin:30px auto;
+}
+.search {
+  padding:3px 10px;
+  background:rgba(255, 255, 255, 0.9);
+  border:0px solid #dbdbdb;
+}
+
+input {
+  position:relative;
+  padding:6px 15px;
+  left:-8px;
+  border:2px solid #207cca;
+  background-color:#207cca;
+  color:#fafafa;
+}
+
+input:hover  {
+  background-color:#fafafa;
+  color:#207cca;
+}
+
+>>>>>>> 440d0af1fb1fabbb2f4fa4689e8efda839982053
 .top-bar {
   background-color: #FCB600;
+}
+
+@viewport {
+  width: device-width;
+  zoom: 1.0;
 }
 
 .wrapper {

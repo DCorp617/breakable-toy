@@ -1,4 +1,5 @@
 <div class="center">
+<<<<<<< HEAD
   <ul class="search">
     <%= form_tag(courts_path, :method => "get", id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder:  "Search..." %>
@@ -27,4 +28,34 @@
     <h4>There are no courts with the name <%= params[:search] %>.</h4>
   <% end %>
 
+=======
+  <hr class="indexBar" />
+  <div class="search">
+    <%= form_tag(courts_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder:  "Search Courts" %>
+    <%= submit_tag "Search", :name => nil %>
+    <% end %>
+  </div>
+  <ul class="wrapper">
+
+
+    <% @courts.each do |court| %>
+      <a href="/courts/<%= court.id %>">
+        <div class="card-panel hoverable">
+          <div class="container">
+            <%= court.name %>
+          </div>
+          <div class="image">
+            <%= image_tag court.court_photo.url.to_s %>
+          </div>
+        </div>
+      </a>
+    <% end %>
+  </ul>
+  <h3 class="button secondary"> <%= link_to "Add a Court", new_court_path %> </h3>
+
+  <% if @courts.blank? %>
+    <h4>There are no courts with the name <%= params[:search] %>.</h4>
+  <% end %>
+>>>>>>> 440d0af1fb1fabbb2f4fa4689e8efda839982053
 </div>
